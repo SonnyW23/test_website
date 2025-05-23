@@ -1,0 +1,55 @@
+/* Import Nunito font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
+
+/* Basic body styling */
+body {
+    font-family: 'Nunito', sans-serif; /* Use Nunito, fallback to sans-serif */
+    font-weight: 800; /* Extra Bold */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f50d; /* Yellow background */
+    color: #12cb20; /* Green text */
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: #f58026; /* Orange background for nav */
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* White text for nav links for better contrast */
+    font-weight: 800; /* Extra Bold */
+}
+
+nav ul li a:hover {
+    color: #12cb20; /* Green on hover */
+}
+
+/* Main content area styling */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #f58026; /* Orange for headings */
+}
+
+/* Add some basic styling for other elements if needed, e.g., paragraphs */
+p {
+    line-height: 1.6;
+}
