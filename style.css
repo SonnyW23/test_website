@@ -1,0 +1,235 @@
+/* Import Nunito font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@800&display=swap');
+
+/* Basic body styling */
+body {
+    font-family: 'Nunito', sans-serif; /* Use Nunito, fallback to sans-serif */
+    font-weight: 800; /* Extra Bold */
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* CHANGED - White background */
+    color: #333333; /* CHANGED - Dark gray/black text */
+    animation: fadeInAnimation ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    opacity: 0; /* Start with opacity 0, animation will make it 1 */
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: #f58026; /* Orange background for nav */
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff; /* White text for nav links */
+    font-weight: 800; /* Extra Bold */
+    padding: 10px 15px; /* Add some padding for better hover area */
+    display: inline-block; /* Needed for padding and transform */
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease; /* Smooth transition */
+    border-radius: 4px; /* Slightly rounded corners for the hover background */
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight whiteish background highlight on hover */
+    color: #f9f50d; /* Yellow text on hover - already there */
+    transform: translateY(-2px); /* Slight upward shift */
+}
+
+/* Main content area styling */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #f58026; /* Orange for headings */
+}
+
+/* Add some basic styling for other elements if needed, e.g., paragraphs */
+p {
+    line-height: 1.6;
+}
+
+/* Footer styling */
+footer {
+    background-color: #333333; /* Dark gray background for footer */
+    color: #ffffff; /* White text for footer */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px; /* Add some space above the footer */
+    font-size: 0.9em;
+}
+
+footer p {
+    margin: 5px 0; /* Space out the paragraphs within the footer */
+    line-height: 1.4; /* Adjust line height for footer text */
+}
+
+/* Placeholder image styling */
+.placeholder-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto; /* Center images and add some margin */
+    border: 1px solid #ddd; /* Optional: adds a light border */
+    border-radius: 4px; /* Optional: slightly rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effect */
+}
+
+/* Styling for multiple images in projects or team section */
+.projects-container img, /* If you wrap project images in a container */
+.team-member-image { /* Or target team images directly if not in a specific container */
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-width: calc(50% - 22px); /* Example for two images side-by-side, adjust as needed */
+}
+
+/* Adjust team member image styling for better layout if needed */
+.team-member-image {
+   width: 180px; /* Fixed width for team member images */
+   height: 180px; /* Fixed height for team member images */
+   object-fit: cover; /* Ensures the image covers the area, might crop */
+   border-radius: 50%; /* Circular images for team members */
+   margin: 10px;
+   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added for hover effect */
+}
+
+/* Container for team images to allow flex layout */
+/* You might need to wrap team images in a div with this class in team.html if not already done */
+.team-images-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 20px;
+   margin-top: 20px;
+}
+
+/* Page transition animations */
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Optional: Class to trigger fade-out on link click if needed */
+.fade-out {
+    animation: fadeOutAnimation ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Image hover effects */
+.placeholder-image:hover,
+.team-member-image:hover {
+    transform: scale(1.03); /* Slightly enlarge the image */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a more prominent shadow */
+    /* transition: transform 0.3s ease, box-shadow 0.3s ease; */ /* Already added to base image styles */
+}
+
+/* General button styling (example, if you add buttons later) */
+.button-style {
+    background-color: #12cb20; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-style:hover {
+    background-color: #0e9a18; /* Darker green */
+    transform: translateY(-1px);
+    cursor: pointer;
+}
+
+/* Theme Switcher Button */
+.theme-switcher-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333; /* Initial dark background for button */
+    color: #fff; /* Initial light icon/text for button */
+    border: none;
+    border-radius: 50%;
+    padding: 10px 12px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.theme-switcher-button:hover {
+    transform: scale(1.1);
+}
+
+/* Dark Mode Theme */
+body.dark-mode {
+    background-color: #121212; /* Very dark gray for body background */
+    color: #e0e0e0; /* Light gray for general text */
+}
+
+body.dark-mode nav {
+    background-color: #1f1f1f; /* Darker gray for nav background */
+    border-bottom: 1px solid #333;
+}
+
+body.dark-mode nav ul li a {
+    color: #e0e0e0; /* Light gray for nav links */
+}
+
+body.dark-mode nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Lighter highlight on dark background */
+    color: #f9f50d; /* Yellow text on hover - accent */
+}
+
+body.dark-mode h1 {
+    color: #f58026; /* Orange for headings - same as light, still visible */
+}
+
+body.dark-mode .placeholder-image,
+body.dark-mode .team-member-image {
+   border-color: #444; /* Darker border for images in dark mode */
+   opacity: 0.85; /* Slightly reduce opacity of images in dark mode */
+}
+
+body.dark-mode footer {
+    background-color: #1f1f1f; /* Darker gray for footer background */
+    color: #c0c0c0; /* Slightly dimmer white for footer text */
+    border-top: 1px solid #333;
+}
+
+/* Adjust theme switcher button colors for dark mode if needed */
+body.dark-mode .theme-switcher-button {
+   background-color: #f0f0f0; /* Light background for button in dark mode */
+   color: #333; /* Dark icon/text for button in dark mode */
+}
